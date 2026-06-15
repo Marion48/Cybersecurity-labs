@@ -21,33 +21,38 @@ The goal of this investigation was to identify:
 - PCAP traffic analysis
 - Windows networking concepts
 ## Investigation Process
-1. Connection Establishment
+1. Connection Establishment:
 The analysis began with a TCP 3-way handshake on port 445 (SMB).
 ### Key observation
 - 10.0.0.130 initiated the connection to 10.0.0.133.
 This indicates that 10.0.0.130 was actively targeting the SMB service on 10.0.0.133.
 
-2. Authentication and Credential Validation
+![Screenshot](screenshot/Screenshot.png)
+
+2. Authentication and Credential Validation:
 The attacker negotiated the SMB protocol and authenticated using NTLM.
 ### Key evidence
 - Packet 132: Session Setup Request, NTLMSSP_AUTH
 - User account: \vsales
 The corresponding Session Setup Response indicated a successful login, confirming the attacker possessed valid credentials.
-Screenshot
-3. Administrative Access Verification
+
+![Screenshot](screenshot/Screenshot2.png)
+
+3. Administrative Access Verification:
 After authentication, the attacker accessed administrative shares:
 - IPC$ – used for inter-process communication and system enumeration
 - ADMIN$ – requires administrative privileges
 Successful access to \\10.0.0.133\ADMIN$ confirmed that the vsales account had local administrator rights on the target system.
 
 
-4. PsExec Payload Deployment
+4. PsExec Payload Deployment:
 The most critical evidence was the transfer of PSEXESVC.exe, the service executable used by PsExec.
 ### Key evidence
 - Packet 144: SMB2 Create Request for PSEXESVC.exe
 - Subsequent Write Requests transferred the executable to the target system
 This sequence demonstrates the attacker deploying PsExec to establish remote command execution capabilities.
 
+![Screenshot](screenshot/Screenshot3.png)
 
 ### Key Findings
 
@@ -75,9 +80,6 @@ The packet capture reveals a classic lateral movement attack using PsExec. The a
 - Prepared the target system for remote command execution using DCERPC and SMB
 This activity strongly indicates that the attacker gained administrative control of the target system and established a foothold for further movement within the network.
 
-PCAP Analysis screenshots.
-![Screenshot](screenshot/Screenshot.png)
-![Screenshot](screenshot/Screenshot2.png)
-![Screenshot](screenshot/Screenshot3.png)
+PCAP Analysis screenshots of the second Targeted User.
 ![Screenshot](screenshot/Screenshot4.png)
 ![Screenshot](screenshot/Screenshot5.png)
