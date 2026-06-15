@@ -76,8 +76,8 @@ The packet capture reveals a classic lateral movement attack using PsExec. The a
 This activity strongly indicates that the attacker gained administrative control of the target system and established a foothold for further movement within the network.
 
 PCAP Analysis screenshots.
-![Screenshot](screenshot\Screenshot.png)
-![Screenshot](screenshot\Screenshot2.png)
-![Screenshot](screenshot\Screenshot3.png)
-![Screenshot](screenshot\Screenshot4.png)
-![Screenshot](screenshot\Screenshot5.png)
+![Screenshot](screenshot/Screenshot.png)
+![Screenshot](screenshot/Screenshot2.png)
+![Screenshot](screenshot/Screenshot3.png)
+![Screenshot](screenshot/Screenshot4.png)
+![Screenshot](screenshot/Screenshot5.png)
