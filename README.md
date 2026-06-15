@@ -44,8 +44,8 @@ Successful access to \\10.0.0.133\ADMIN$ confirmed that the vsales account had l
 4. PsExec Payload Deployment
 The most critical evidence was the transfer of PSEXESVC.exe, the service executable used by PsExec.
 ### Key evidence
-Packet 144: SMB2 Create Request for PSEXESVC.exe
-Subsequent Write Requests transferred the executable to the target system
+- Packet 144: SMB2 Create Request for PSEXESVC.exe
+- Subsequent Write Requests transferred the executable to the target system
 This sequence demonstrates the attacker deploying PsExec to establish remote command execution capabilities.
 
 
