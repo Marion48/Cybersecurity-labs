@@ -24,7 +24,7 @@ This repository documents hands-on investigations performed using industry-stand
 | Lab | Topic | Status |
 |------|--------|--------|
 | 01 | PsExec Lateral Movement Investigation | Complete |
-| 02 | llmnr-and-nbt-ns-poisoning-attack-investigation| Complete |
+| 02 | LLMNR and NBT-NS poisoning attack Investigation| Complete |
 
  
 ## Tools Used
@@ -41,4 +41,4 @@ This repository documents hands-on investigations performed using industry-stand
  
 ```text
 01-psexec-lateral-movement/
-02-LLMNR  and NBT-NS poisoning attack Investigation/
+02-llmnr-and-nbt-ns-poisoning-attack-investigation/
