@@ -24,8 +24,8 @@ This repository documents hands-on investigations performed using industry-stand
 | Lab | Topic | Status |
 |------|--------|--------|
 | 01 | PsExec Lateral Movement Investigation | Complete |
-| 02 | DNS Tunneling Analysis | In Progress |
-| 03 | Phishing Email Investigation | Planned |
+| 02 | 02- LLMNR  and NBT-NS poisoning attack Investigation | Complete |
+
  
 ## Tools Used
  
